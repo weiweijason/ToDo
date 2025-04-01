@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App UI Design</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Heroicons via CDN -->
+    <script src="https://unpkg.com/@heroicons/react@2.0.18/24/outline/esm/index.js"></script>
+    <style>
+        /* 自定義樣式 */
+        .phone-frame {
+            width: 375px;
+            height: 812px;
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .task-item {
+            transition: all 0.3s ease;
+        }
+        
+        .task-item:hover {
+            transform: translateX(-8px);
+        }
+        
+        .completed {
+            text-decoration: line-through;
+            color: #666666;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <!-- 設計標題 -->
+    <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">To-Do App UI 設計</h1>
+    
+    <!-- 手機畫面容器 -->
+    <div class="flex justify-center items-start gap-8">
+        <!-- 主畫面 -->
+        <div class="phone-frame bg-white">
+            <!-- 頂部導航 -->
+            <div class="px-6 py-4 border-b border-gray-100">
+                <h2 class="text-xl font-semibold">我的任務</h2>
+            </div>
+            
+            <!-- 任務列表 -->
+            <div class="p-4">
+                <!-- 未完成任務 -->
+                <div class="task-item p-4 mb-3 bg-white rounded-xl shadow-sm border border-gray-100">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 border-2 border-[#007AFF] rounded-full mr-3"></div>
+                        <div class="flex-1">
+                            <h3 class="text-base font-medium">完成 To-Do App 的設計</h3>
+                            <p class="text-sm text-[#666666]">今天 14:30</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 已完成任務 -->
+                <div class="task-item p-4 mb-3 bg-gray-50 rounded-xl">
+                    <div class="flex items-center">
+                        <div class="w-6 h-6 bg-[#007AFF] rounded-full mr-3 flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-base font-medium completed">閱讀 PRD 文件</h3>
+                            <p class="text-sm text-[#666666]">今天 13:45</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 新增任務按鈕 -->
+            <div class="absolute bottom-8 right-6">
+                <button class="w-14 h-14 bg-[#007AFF] rounded-full shadow-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 新增任務界面 -->
+        <div class="phone-frame bg-white">
+            <!-- 頂部導航 -->
+            <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+                <button class="text-[#007AFF]">取消</button>
+                <h2 class="text-xl font-semibold">新增任務</h2>
+                <button class="text-[#007AFF] font-medium">完成</button>
+            </div>
+            
+            <!-- 輸入區域 -->
+            <div class="p-6">
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">任務標題</label>
+                    <input type="text" 
+                           class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#007AFF] focus:ring-2 focus:ring-[#007AFF] focus:ring-opacity-20 outline-none transition-all"
+                           placeholder="輸入任務內容...">
+                </div>
+                
+                <!-- 提示文字 -->
+                <p class="text-sm text-[#666666]">
+                    任務將顯示在您的待辦事項清單中。
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 設計說明 -->
+    <div class="mt-8 max-w-4xl mx-auto text-gray-600 text-sm">
+        <h3 class="font-semibold text-gray-800 mb-2">設計說明：</h3>
+        <ul class="list-disc pl-5 space-y-2">
+            <li>遵循 PRD 中定義的色彩規範：主色調 #007AFF、背景色 #FFFFFF、文字顏色 #000000、次要文字 #666666</li>
+            <li>採用簡潔明瞭的界面設計，突出核心功能</li>
+            <li>使用圓角設計提升視覺舒適度</li>
+            <li>加入適當的動畫效果增強使用體驗</li>
+            <li>清晰的視覺層次，便於用戶快速理解和操作</li>
+        </ul>
+    </div>
+</body>
+</html> 
